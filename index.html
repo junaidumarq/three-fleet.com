@@ -5,85 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Three Fleet Logistics Co. W.L.L</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
     }
 
     .top {
-      background: #f2f4f5;
       height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1569426243480-1519cc89f724?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
       position: relative;
-      color: #003366;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      background-image: url('https://images.unsplash.com/photo-1601233741537-40a2e9343c3f?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
     }
 
-    .overlay-light {
-      background-color: rgba(255, 255, 255, 0.85);
+    .overlay {
       position: absolute;
-      height: 100%;
+      top: 0; left: 0;
       width: 100%;
-      top: 0;
-      left: 0;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .home-btn {
       position: absolute;
-      top: 15px;
+      top: 20px;
       left: 20px;
       z-index: 2;
       background: #003366;
-      color: #fff;
-      padding: 8px 16px;
+      color: white;
+      padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
+      font-size: 14px;
     }
 
     .top-content {
       position: relative;
       z-index: 2;
       text-align: center;
+      animation: fadeIn 2s ease-in;
     }
 
     .logo {
       width: 80px;
       height: 80px;
+      object-fit: contain;
       margin-bottom: 10px;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #003366;
-      margin: 10px 0;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #f0f0f0;
     }
 
     .bottom {
-      background-color: #1f1f1f;
-      color: #eee;
-      padding: 40px 20px;
+      background-color: #002244;
+      padding: 50px 20px;
       text-align: center;
     }
 
-    .clock-section {
-      margin: 30px 0;
-    }
-
     canvas {
-      background: #fff;
+      background: white;
       border-radius: 50%;
     }
 
     .countdown {
       font-size: 1.5rem;
-      margin-top: 10px;
-      color: #fff;
+      margin-top: 12px;
+      color: #fefefe;
     }
 
     .social-icons {
@@ -91,17 +97,21 @@
     }
 
     .social-icons a {
-      color: #ccc;
+      color: #cccccc;
       font-size: 24px;
-      margin: 0 10px;
+      margin: 0 12px;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: white;
     }
 
     .about-section {
-      background-color: #111;
-      color: #ccc;
-      margin-top: 30px;
-      padding: 20px;
+      max-width: 700px;
+      margin: 40px auto 20px;
+      color: #e0e0e0;
     }
 
     .footer {
@@ -110,9 +120,18 @@
       color: #aaa;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 1.8rem;
+      }
+
+      .tagline {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -121,42 +140,35 @@
 
   <!-- Top Section -->
   <div class="top">
-    <div class="overlay-light"></div>
+    <div class="overlay"></div>
     <a href="#" class="home-btn">Home</a>
     <div class="top-content">
       <img src="logo.png" alt="Company Logo" class="logo" />
       <h1>Three Fleet Logistics Co. W.L.L</h1>
-      <p>Website under construction. Launching soon.</p>
+      <p class="tagline">Modern Transport. Global Reach. Reliable Shipping.</p>
     </div>
   </div>
 
   <!-- Bottom Section -->
   <div class="bottom">
+    <canvas id="analogClock" width="180" height="180"></canvas>
+    <div class="countdown" id="countdownText">Launching in 60 days</div>
 
-    <!-- Clock & Countdown -->
-    <div class="clock-section">
-      <canvas id="analogClock" width="180" height="180"></canvas>
-      <div class="countdown" id="countdownText">Launching in 60 days</div>
-    </div>
-
-    <!-- Social Media -->
     <div class="social-icons">
-      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
 
-    <!-- About Section -->
     <div class="about-section">
       <h3>About Three Fleet</h3>
-      <p>Three Fleet Logistics Co. W.L.L offers modern and reliable transport, logistics, and shipping services tailored for global operations. We ensure efficient supply chain movement across sea, land, and air.</p>
+      <p>Three Fleet Logistics Co. W.L.L delivers streamlined transport and logistics solutions by sea, land, and air. We move goods efficiently across global borders with trusted reliability and operational excellence.</p>
     </div>
 
-    <!-- Footer -->
     <div class="footer">Produced by J. Studio. 2025</div>
   </div>
 
-  <!-- JavaScript -->
+  <!-- JavaScript: Clock & Countdown -->
   <script>
     // Analog Clock (Bahrain Time = UTC+3)
     function drawClock() {
@@ -168,7 +180,7 @@
       function drawFace() {
         ctx.beginPath();
         ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "#fff";
         ctx.fill();
         ctx.strokeStyle = "#003366";
         ctx.lineWidth = 4;
@@ -243,8 +255,8 @@
 
     drawClock();
 
-    // Countdown: 60 days from fixed start
-    const startDate = new Date("2025-06-27T00:00:00").getTime(); // Starting today
+    // Countdown
+    const startDate = new Date("2025-06-27T00:00:00").getTime(); // start today
     const launchDays = 60;
 
     function updateCountdown() {
@@ -255,7 +267,7 @@
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 60 * 60 * 1000); // update every hour
+    setInterval(updateCountdown, 3600000); // every hour
 
   </script>
 </body>
