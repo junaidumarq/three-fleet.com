@@ -21,7 +21,7 @@
 
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,30,0.75), rgba(0,0,30,0.75)), url('https://images.unsplash.com/photo-1601233741537-40a2e9343c3f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,30,0.75), rgba(0,0,30,0.75)), url('https://images.unsplash.com/photo-1603791452906-cb959bebb3c5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -57,7 +57,7 @@
     }
 
     .about {
-      background: #fff;
+      background: #fff url('https://www.transparenttextures.com/patterns/cubes.png');
       padding: 60px 20px;
       text-align: center;
     }
@@ -90,6 +90,12 @@
       margin-left: 10px;
       border-radius: 3px;
       cursor: pointer;
+    }
+
+    .contact-line {
+      margin-top: 20px;
+      color: #444;
+      font-size: 0.95rem;
     }
 
     .social-icons {
@@ -131,13 +137,14 @@
   </section>
 
   <section class="about">
-    <h3>About Three Fleet</h3>
+    <h3>About us</h3>
     <p>Three Fleet Logistics Co. W.L.L delivers streamlined transport and logistics solutions by sea, land, and air. We move goods efficiently across global borders with trusted reliability and operational excellence.</p>
     <form class="subscribe-form">
       <label for="email">Subscribe to be the first to know about our launch</label><br><br>
       <input type="email" id="email" placeholder="Enter your email here">
       <button type="submit">Subscribe Now</button>
     </form>
+    <div class="contact-line">Or contact us at <a href="mailto:info@three-fleet.com">info@three-fleet.com</a></div>
     <div class="social-icons">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
