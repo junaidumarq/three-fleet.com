@@ -2,89 +2,261 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Three Fleet Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three Fleet Logistics Co. W.L.L</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f0f0;
-      color: #333;
-      height: 100vh;
-      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .background {
-      background-image: url('https://images.unsplash.com/photo-1505839673365-e3971f8d9184?auto=format&fit=crop&w=1600&q=80');
+    .top {
+      background: #f2f4f5;
+      height: 50vh;
+      background-image: url('https://images.unsplash.com/photo-1569426243480-1519cc89f724?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      filter: blur(6px);
-      z-index: -1;
-    }
-
-    .overlay {
-      background-color: rgba(240, 240, 240, 0.85);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 0;
-    }
-
-    .container {
       position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    h1 {
-      font-size: 2.8rem;
       color: #003366;
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    p {
-      font-size: 1.2rem;
-      color: #444;
+    .overlay-light {
+      background-color: rgba(255, 255, 255, 0.85);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
 
-    a {
-      color: #003366;
-      font-weight: bold;
+    .home-btn {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      z-index: 2;
+      background: #003366;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .top-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #003366;
+      margin: 10px 0;
+    }
+
+    .bottom {
+      background-color: #1f1f1f;
+      color: #eee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .clock-section {
+      margin: 30px 0;
+    }
+
+    canvas {
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    .social-icons {
+      margin: 30px 0;
+    }
+
+    .social-icons a {
+      color: #ccc;
+      font-size: 24px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .about-section {
+      background-color: #111;
+      color: #ccc;
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="overlay"></div>
-  <div class="container">
-    <h1>Three Fleet Logistics</h1>
-    <p>🚢 Our website is currently under construction.</p>
-    <p>Please check back soon. For inquiries, contact us at: <br>
-      <a href="mailto:info@three-fleet.com">info@three-fleet.com</a>
-    </p>
+
+  <!-- Top Section -->
+  <div class="top">
+    <div class="overlay-light"></div>
+    <a href="#" class="home-btn">Home</a>
+    <div class="top-content">
+      <img src="logo.png" alt="Company Logo" class="logo" />
+      <h1>Three Fleet Logistics Co. W.L.L</h1>
+      <p>Website under construction. Launching soon.</p>
+    </div>
   </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom">
+
+    <!-- Clock & Countdown -->
+    <div class="clock-section">
+      <canvas id="analogClock" width="180" height="180"></canvas>
+      <div class="countdown" id="countdownText">Launching in 60 days</div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="social-icons">
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+      <h3>About Three Fleet</h3>
+      <p>Three Fleet Logistics Co. W.L.L offers modern and reliable transport, logistics, and shipping services tailored for global operations. We ensure efficient supply chain movement across sea, land, and air.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">Produced by J. Studio. 2025</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Analog Clock (Bahrain Time = UTC+3)
+    function drawClock() {
+      const canvas = document.getElementById("analogClock");
+      const ctx = canvas.getContext("2d");
+      const radius = canvas.height / 2;
+      ctx.translate(radius, radius);
+
+      function drawFace() {
+        ctx.beginPath();
+        ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.strokeStyle = "#003366";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+      }
+
+      function drawNumbers() {
+        ctx.font = radius * 0.15 + "px Arial";
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        for (let num = 1; num <= 12; num++) {
+          const ang = num * Math.PI / 6;
+          ctx.rotate(ang);
+          ctx.translate(0, -radius * 0.85);
+          ctx.rotate(-ang);
+          ctx.fillText(num.toString(), 0, 0);
+          ctx.rotate(ang);
+          ctx.translate(0, radius * 0.85);
+          ctx.rotate(-ang);
+        }
+      }
+
+      function drawTime() {
+        const now = new Date();
+        const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+        const bahrainTime = new Date(utc + (3 * 3600000));
+        let hour = bahrainTime.getHours();
+        let minute = bahrainTime.getMinutes();
+        let second = bahrainTime.getSeconds();
+
+        hour = hour % 12;
+        hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60));
+        minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+        second = second * Math.PI / 30;
+
+        // Hour
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.rotate(hour);
+        ctx.lineTo(0, -radius * 0.5);
+        ctx.stroke();
+        ctx.rotate(-hour);
+
+        // Minute
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.rotate(minute);
+        ctx.lineTo(0, -radius * 0.7);
+        ctx.stroke();
+        ctx.rotate(-minute);
+
+        // Second
+        ctx.beginPath();
+        ctx.strokeStyle = "#D40000";
+        ctx.moveTo(0, 0);
+        ctx.rotate(second);
+        ctx.lineTo(0, -radius * 0.9);
+        ctx.stroke();
+        ctx.rotate(-second);
+        ctx.strokeStyle = "#000";
+      }
+
+      function updateClock() {
+        ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
+        drawFace();
+        drawNumbers();
+        drawTime();
+      }
+
+      setInterval(updateClock, 1000);
+    }
+
+    drawClock();
+
+    // Countdown: 60 days from fixed start
+    const startDate = new Date("2025-06-27T00:00:00").getTime(); // Starting today
+    const launchDays = 60;
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const elapsedDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+      const remaining = Math.max(launchDays - elapsedDays, 0);
+      document.getElementById("countdownText").innerText = `Launching in ${remaining} day${remaining !== 1 ? 's' : ''}`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60 * 60 * 1000); // update every hour
+
+  </script>
 </body>
 </html>
