@@ -8,6 +8,6 @@
 <body style="text-align:center; padding:50px; font-family:sans-serif;">
   <h1>🚧 Website Under Construction</h1>
   <p>We're working hard to launch our website soon.<br>
-     In the meantime, feel free to contact us at: <a href="mailto:your@email.com">your@email.com</a></p>
+     In the meantime, feel free to contact us at: <a href="mailto:ops@three-fleet.com">ops@three-fleet.com</a></p>
 </body>
 </html>
