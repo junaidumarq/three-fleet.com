@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-</head>
-<body style="text-align:center; padding:50px; font-family:sans-serif;">
-  <h1>🚧 Website Under Construction</h1>
-  <p>We're working hard to make changes in our website. Stay tuned.<br>
-     In the meantime, feel free to contact us at: <a href="mailto:ops@three-fleet.com">ops@three-fleet.com</a></p>
-</body>
-</html>
+# Three Fleet Logistics - Website
+
+🚧 **Under Construction**
+
+Welcome to the GitHub repository for **Three Fleet Logistics**, a company specializing in modern logistics and global shipping solutions.
+
+Our website is currently under development.
+
+### 📫 Contact Us
+
+In the meantime, you can reach us at:  
+📧 [info@three-fleet.com](mailto:info@three-fleet.com)
+
+---
+
+_This website is powered by GitHub Pages and will be updated soon._
