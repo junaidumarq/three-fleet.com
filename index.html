@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Three Fleet Logistics Co. W.L.L</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&family=Orbitron:wght@500;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -43,20 +43,19 @@
       z-index: 0;
     }
 
-    .home-btn {
+    .company-name {
       position: absolute;
       top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #002244;
+      left: 20px;
+      z-index: 3;
+      background: rgba(0, 0, 50, 0.6);
       color: white;
-      padding: 10px 24px;
+      padding: 10px 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       border-radius: 5px;
-      text-decoration: none;
-      font-size: 18px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      z-index: 2;
     }
 
     canvas#clock {
@@ -72,6 +71,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
+      font-family: 'Poppins', sans-serif;
     }
 
     .hero h2 {
@@ -169,10 +169,6 @@
       .hero h1 {
         font-size: 2rem;
       }
-      .home-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-      }
       canvas#clock {
         width: 300px;
         height: 300px;
@@ -182,7 +178,7 @@
 </head>
 <body>
   <section class="hero">
-    <a href="#" class="home-btn">Three Fleet Logistics Co. W.L.L</a>
+    <div class="company-name">Three Fleet Logistics Co. W.L.L</div>
     <canvas id="clock" width="600" height="600"></canvas>
     <div class="hero-content">
       <h2>OUR NEW SITE IS</h2>
