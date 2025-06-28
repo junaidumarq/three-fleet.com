@@ -153,5 +153,58 @@
       &copy; 2025 Three Fleet Logistics Co. W.L.L | All rights reserved
     </div>
   </section>
+  <script>
+  const canvas = document.getElementById('clock');
+  const ctx = canvas.getContext('2d');
+  const radius = canvas.width / 2;
+  ctx.translate(radius, radius);
+
+  function drawClock() {
+    ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
+    drawFace();
+    drawTime();
+  }
+
+  function drawFace() {
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+    ctx.fill();
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+  }
+
+  function drawTime() {
+    const now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+
+    hour = hour % 12;
+    hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60));
+    drawHand(hour, radius * 0.5, 6);
+
+    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    drawHand(minute, radius * 0.7, 4);
+
+    second = (second * Math.PI / 30);
+    drawHand(second, radius * 0.9, 2, '#ff3b3b');
+  }
+
+  function drawHand(pos, length, width, color = '#fff') {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = color;
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+  }
+
+  setInterval(drawClock, 1000);
+</script>
 </body>
 </html>
