@@ -18,17 +18,18 @@
       background-color: #f4f4f4;
       color: #333;
     }
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 30, 0.7)), url('background1.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-}
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 30, 0.7)), url('background1.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
 
     .hero h2 {
       font-weight: 400;
@@ -53,6 +54,11 @@
       font-size: 24px;
       margin-top: 20px;
       color: white;
+    }
+
+    canvas#clock {
+      margin-top: 20px;
+      background: transparent;
     }
 
     .about {
@@ -127,6 +133,7 @@
 </head>
 <body>
   <section class="hero">
+    <canvas id="clock" width="120" height="120"></canvas>
     <h2>OUR NEW SITE IS</h2>
     <h1>COMING SOON</h1>
     <p>Stay tuned!</p>
@@ -153,7 +160,7 @@
       &copy; 2025 Three Fleet Logistics Co. W.L.L | All rights reserved
     </div>
   </section>
-  <script>
+<script>
   const canvas = document.getElementById('clock');
   const ctx = canvas.getContext('2d');
   const radius = canvas.width / 2;
