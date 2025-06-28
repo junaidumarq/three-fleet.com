@@ -29,6 +29,20 @@
       text-align: center;
       color: white;
       padding: 0 20px;
+      position: relative;
+    }
+
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #002244;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      z-index: 10;
     }
 
     .hero h2 {
@@ -59,6 +73,8 @@
     canvas#clock {
       margin-top: 20px;
       background: transparent;
+      width: 240px;
+      height: 240px;
     }
 
     .about {
@@ -133,7 +149,8 @@
 </head>
 <body>
   <section class="hero">
-    <canvas id="clock" width="120" height="120"></canvas>
+    <a href="#" class="home-btn">Home</a>
+    <canvas id="clock" width="240" height="240"></canvas>
     <h2>OUR NEW SITE IS</h2>
     <h1>COMING SOON</h1>
     <p>Stay tuned!</p>
@@ -173,13 +190,20 @@
   }
 
   function drawFace() {
-    ctx.beginPath();
-    ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-    ctx.fill();
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 4;
-    ctx.stroke();
+    // draw hour markers as small hyphens
+    for (let i = 0; i < 12; i++) {
+      const angle = (i * Math.PI) / 6;
+      const x1 = Math.cos(angle) * (radius * 0.85);
+      const y1 = Math.sin(angle) * (radius * 0.85);
+      const x2 = Math.cos(angle) * (radius * 0.9);
+      const y2 = Math.sin(angle) * (radius * 0.9);
+      ctx.beginPath();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
   }
 
   function drawTime() {
