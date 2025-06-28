@@ -43,31 +43,6 @@
       z-index: 0;
     }
 
-    .company-name {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 3;
-      background: rgba(0, 0, 0, 0.75);
-      color: white;
-      padding: 8px 16px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 3px;
-      letter-spacing: 0.5px;
-    }
-
-    canvas#clock {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      max-width: 90vw;
-      max-height: 90vh;
-      z-index: 1;
-      pointer-events: none;
-    }
-
     .hero-content {
       position: relative;
       z-index: 2;
@@ -86,6 +61,13 @@
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .hero h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 20px;
       color: #ffffff;
     }
 
@@ -168,18 +150,13 @@
       .hero h1 {
         font-size: 2rem;
       }
-      canvas#clock {
-        width: 300px;
-        height: 300px;
-      }
     }
   </style>
 </head>
 <body>
   <section class="hero">
-    <div class="company-name">Three Fleet Logistics Co. W.L.L</div>
-    <canvas id="clock" width="600" height="600"></canvas>
     <div class="hero-content">
+      <h3>Three Fleet Logistics Co. W.L.L</h3>
       <h2>OUR NEW SITE IS</h2>
       <h1>COMING SOON</h1>
       <p>Stay tuned!</p>
@@ -207,64 +184,5 @@
       &copy; 2025 Three Fleet Logistics Co. W.L.L | All rights reserved
     </div>
   </section>
-  <script>
-    const canvas = document.getElementById('clock');
-    const ctx = canvas.getContext('2d');
-    const radius = canvas.width / 2;
-    ctx.translate(radius, radius);
-
-    function drawClock() {
-      ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
-      drawFace();
-      drawTime();
-    }
-
-    function drawFace() {
-      for (let i = 0; i < 12; i++) {
-        const angle = (i * Math.PI) / 6;
-        const x1 = Math.cos(angle) * (radius * 0.85);
-        const y1 = Math.sin(angle) * (radius * 0.85);
-        const x2 = Math.cos(angle) * (radius * 0.9);
-        const y2 = Math.sin(angle) * (radius * 0.9);
-        ctx.beginPath();
-        ctx.strokeStyle = '#cccccc';
-        ctx.lineWidth = 2;
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.stroke();
-      }
-    }
-
-    function drawTime() {
-      const now = new Date();
-      let hour = now.getHours();
-      let minute = now.getMinutes();
-      let second = now.getSeconds();
-
-      hour = hour % 12;
-      hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60));
-      drawPinHand(hour, radius * 0.45, '#ffffff');
-
-      minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
-      drawPinHand(minute, radius * 0.65, '#a0c4ff');
-
-      second = (second * Math.PI / 30);
-      drawPinHand(second, radius * 0.85, '#ff3b3b');
-    }
-
-    function drawPinHand(angle, length, color) {
-      ctx.save();
-      ctx.rotate(angle);
-      ctx.beginPath();
-      ctx.fillStyle = color;
-      ctx.moveTo(-2, 0);
-      ctx.lineTo(0, -length);
-      ctx.lineTo(2, 0);
-      ctx.fill();
-      ctx.restore();
-    }
-
-    setInterval(drawClock, 1000);
-  </script>
 </body>
 </html>
