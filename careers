@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers - Three Fleet Logistics</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Careers</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2>Join Our Team</h2>
+    <p>We are always on the lookout for passionate, skilled individuals in the fields of transportation, logistics, operations, and customer service.</p>
+
+    <h3>Current Openings</h3>
+    <ul>
+      <li>Heavy Vehicle Drivers</li>
+      <li>Logistics Coordinators</li>
+      <li>Fleet Maintenance Technicians</li>
+      <li>Sales & Customer Support Executives</li>
+    </ul>
+
+    <p>Email your CV to <strong>hr@threefleetlogistics.com</strong></p>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Three Fleet Logistics Co. W.L.L. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
