@@ -1,188 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Three Fleet Logistics Co. W.L.L</title>
+  <link href="style.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 30, 0.7)), url('background1.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #f0f0f0;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      backdrop-filter: blur(10px);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h2 {
-      font-weight: 400;
-      letter-spacing: 2px;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: #f0f0f0;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .hero h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-      color: #ffffff;
-    }
-
-    .hero p {
-      font-size: 1rem;
-      margin-bottom: 30px;
-      color: #f0f0f0;
-    }
-
-    .scroll-down {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #f0f0f0;
-    }
-
-    .about {
-      background: #fff url('https://www.transparenttextures.com/patterns/cubes.png');
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .about h3 {
-      font-size: 1.6rem;
-      color: #002244;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #666;
-    }
-
-    .subscribe-form input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      max-width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
-    .subscribe-form button {
-      padding: 10px 20px;
-      background: #002244;
-      color: white;
-      border: none;
-      margin-left: 10px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    .contact-line {
-      margin-top: 20px;
-      color: #444;
-      font-size: 0.95rem;
-    }
-
-    .social-icons {
-      margin-top: 30px;
-    }
-
-    .social-icons a {
-      color: #002244;
-      margin: 0 10px;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #000;
-    }
-
-    .footer {
-      font-size: 0.8rem;
-      color: #777;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-content">
-      <h3>Three Fleet Logistics Co. W.L.L</h3>
-      <h2>OUR NEW SITE IS</h2>
-      <h1>COMING SOON</h1>
-      <p>Stay tuned!</p>
-      <div class="scroll-down">
-        <i class="fas fa-chevron-down"></i>
+  <header>
+    <div class="container">
+      <h1>Three Fleet Logistics Co. W.L.L</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="assets/company-profile.pdf" target="_blank">Company Profile</a></li>
+        </ul>
+      </nav>
+      <p>Efficient Transport & Global Logistics Solutions</p>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Shipping</h3>
+          <p>Domestic and international shipping solutions tailored to your business needs.</p>
+        </div>
+        <div class="card">
+          <h3>Transport</h3>
+          <p>Reliable semi-trailer truck services operating across the region.</p>
+        </div>
+        <div class="card">
+          <h3>Logistics</h3>
+          <p>End-to-end logistics services, warehousing, route planning, and delivery management.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about">
-    <h3>About us</h3>
-    <p><strong>Three Fleet Logistics Co. W.L.L</strong> delivers streamlined transport and logistics solutions by sea, land, and air. We move goods efficiently across global borders with trusted reliability and operational excellence.</p>
-    <form class="subscribe-form">
-      <label for="email">Subscribe to be the first to know about our launch</label><br><br>
-      <input type="email" id="email" placeholder="Enter your email here">
-      <button type="submit">Subscribe Now</button>
-    </form>
-    <div class="contact-line">Or contact us at <a href="mailto:info@three-fleet.com">info@three-fleet.com</a></div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-    <div class="footer">
-      &copy; 2025 Three Fleet Logistics Co. W.L.L | All rights reserved
+  <section class="fleet">
+    <div class="container">
+      <h2>Our Fleet</h2>
+      <p>We operate a modern fleet of semi-trailer trucks, maintained for maximum performance and efficiency. Our fleet is capable of meeting both local and international logistical demands.</p>
     </div>
   </section>
+
+  <section class="gallery">
+    <div class="container">
+      <h2>Fleet & Operations Gallery</h2>
+      <div class="gallery-grid">
+        <img src="gallery/truck1.jpg" alt="Truck in yard" />
+        <img src="gallery/warehouse.jpg" alt="Warehouse operations" />
+        <img src="gallery/driver.jpg" alt="Driver ready for dispatch" />
+        <img src="gallery/shipping-container.jpg" alt="Shipping container loading" />
+        <img src="gallery/fleet.jpg" alt="Fleet lineup" />
+        <img src="gallery/logistics-office.jpg" alt="Logistics office team" />
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: info@threefleetlogistics.com</p>
+      <p>Phone: +973-1234-5678</p>
+      <p>Location: Bahrain & Middle East Region</p>
+    </div>
+  </section>
+
+  <div class="container" style="text-align:center; margin-top: 40px;">
+    <a class="pdf-download" href="assets/company-profile.pdf" target="_blank">📄 Download Company Profile</a>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/97312345678" class="whatsapp-float" target="_blank" title="Chat with us">
+    💬 Chat with us
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Three Fleet Logistics Co. W.L.L. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
